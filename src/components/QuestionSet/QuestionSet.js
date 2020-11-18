@@ -5,7 +5,8 @@ const QuestionSet = props => {
   const [questionSet, setQuestionSet] = useState([])
 
   useEffect(() => {
-    indexQuestions()
+    console.log('these are props for questions ', props)
+    indexQuestions(props.match.params.id)
       .then(res => setQuestionSet(res.data.questions))
       .catch(console.error)
   }, [])
@@ -16,11 +17,6 @@ const QuestionSet = props => {
       <p>{question.answer}</p>
     </div>
   ))
-  // const qSets = questionSets.map(qSet => (
-  //   <div key={qSet.id}>
-  //     <h1>{qSet.topic}</h1>
-  //   </div>
-  // ))
 
   return (
     <div>

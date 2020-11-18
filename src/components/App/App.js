@@ -53,8 +53,8 @@ class App extends Component {
           <Route exact path='/question-sets' render={() => (
             <QuestionSets />
           )} />
-          <Route exact path='/question-sets/:id' render={() => (
-            <QuestionSet />
+          <Route exact path='/question-sets/:id' render={({ match }) => (
+            <QuestionSet match={match} />
           )} />
           <Route exact path='/' render={() => (
             <QuestionSets />
