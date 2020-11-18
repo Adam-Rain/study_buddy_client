@@ -8,6 +8,7 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+import QuestionSet from '../QuestionSet/QuestionSet'
 import QuestionSets from '../QuestionSets/QuestionSets'
 
 class App extends Component {
@@ -49,8 +50,11 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <Route path='/question-sets' render={() => (
+          <Route exact path='/question-sets' render={() => (
             <QuestionSets />
+          )} />
+          <Route exact path='/question-sets/:id' render={() => (
+            <QuestionSet />
           )} />
           <Route exact path='/' render={() => (
             <QuestionSets />
