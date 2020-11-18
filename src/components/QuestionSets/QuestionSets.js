@@ -14,7 +14,7 @@ const QuestionSets = props => {
 
   const qSets = questionSets.map(qSet => (
     <div key={qSet.id}>
-      <h1><Link to={`/question-sets/${qSet.id}`}>{qSet.topic}</Link></h1>
+      <h1><Link to={`/question-sets/${qSet.id}`} topic={qSet.topic}>{qSet.topic}</Link></h1>
     </div>
   ))
 
