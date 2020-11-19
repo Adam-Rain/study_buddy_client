@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { indexQuestions, indexQuestionSets } from '../../api/questions.js'
+import QuestionCards from '../QuestionCards/QuestionCards'
+import CardGroup from 'react-bootstrap/CardGroup'
 
 const QuestionSet = props => {
   const [questionSet, setQuestionSet] = useState([])
@@ -21,6 +23,7 @@ const QuestionSet = props => {
     // if (questionSet.id - props.match.params.id === 0) {
     if (parseInt(questionSet.id) === parseInt(props.match.params.id)) {
       return (
+        // <QuestionCards key={questionSet.id} id={questionSet.id} card={questionSet} />
         <div key={questionSet.id}>
           <h1>{questionSet.topic}</h1>
         </div>
@@ -29,16 +32,21 @@ const QuestionSet = props => {
   })
 
   const questions = questionSet.map(question => (
-    <div key={question.id}>
-      <h2>{question.question}</h2>
-      <p>{question.answer}</p>
-    </div>
+    <QuestionCards key={question.id} id={question.id} card={question} />
+    // <div key={question.id}>
+    //   <h2>{question.question}</h2>
+    //   <p>{question.answer}</p>
+    // </div>
   ))
 
   return (
     <div>
-      {topic}
-      {questions}
+      <div style={{ textAlign: 'center' }} className='container'>
+        {topic}
+      </div>
+      <CardGroup>
+        {questions}
+      </CardGroup>
     </div>
   )
 }
