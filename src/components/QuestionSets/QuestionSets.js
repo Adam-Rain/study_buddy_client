@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { indexQuestionSets } from '../../api/questions.js'
 import QuestionSetsCards from '../QuestionSetsCards/QuestionSetsCards'
+import CardGroup from 'react-bootstrap/CardGroup'
 
 const QuestionSets = props => {
   console.log('these are props ', props)
@@ -15,14 +16,14 @@ const QuestionSets = props => {
   console.log('These are questionSets ', questionSets)
   const qSets = questionSets.map(qSet => (
     // {/* <h1><Link to={`/question-sets/${qSet.id}`}>{qSet.topic}</Link></h1> */}
-    <Link key={qSet.id} to={`/question-sets/${qSet.id}`}><QuestionSetsCards card={qSet}/></Link>
-
+    //  key={qSet.id} to={`/question-sets/${qSet.id}`}
+    <QuestionSetsCards key={qSet.id} id={qSet.id} card={qSet}/>
   ))
 
   return (
-    <div>
+    <CardGroup>
       {qSets}
-    </div>
+    </CardGroup>
   )
 }
 
