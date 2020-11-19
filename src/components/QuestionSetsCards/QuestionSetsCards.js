@@ -9,7 +9,7 @@ import QuestionSet from '../QuestionSet/QuestionSet'
 const QuestionSetsCards = ({ card, id }) => {
   return (
     <Card key={QuestionSet.id}>
-      <Card.Body variant="top">
+      <Card.Body style={{ textAlign: 'center' }} variant="top">
         <Card.Title><Link to={`/question-sets/${id}`}>{card.topic}</Link></Card.Title>
         <Card.Text>
         </Card.Text>
