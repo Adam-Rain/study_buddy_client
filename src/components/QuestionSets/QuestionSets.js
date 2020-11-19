@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { indexQuestionSets } from '../../api/questions.js'
+import QuestionSetsCards from '../QuestionSetsCards/QuestionSetsCards'
 
 const QuestionSets = props => {
   console.log('these are props ', props)
@@ -13,9 +14,9 @@ const QuestionSets = props => {
   }, [])
   console.log('These are questionSets ', questionSets)
   const qSets = questionSets.map(qSet => (
-    <div key={qSet.id}>
-      <h1><Link to={`/question-sets/${qSet.id}`}>{qSet.topic}</Link></h1>
-    </div>
+    // {/* <h1><Link to={`/question-sets/${qSet.id}`}>{qSet.topic}</Link></h1> */}
+    <Link key={qSet.id} to={`/question-sets/${qSet.id}`}><QuestionSetsCards card={qSet}/></Link>
+
   ))
 
   return (

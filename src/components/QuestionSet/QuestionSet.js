@@ -6,7 +6,6 @@ const QuestionSet = props => {
   const [questionSets, setQuestionSets] = useState([])
 
   useEffect(() => {
-    console.log('these are props for questions ', props)
     indexQuestions(props.match.params.id)
       .then(res => setQuestionSet(res.data.questions))
       .catch(console.error)
@@ -18,6 +17,7 @@ const QuestionSet = props => {
     console.log('This is questionSet.id ', questionSet.id)
     console.log('This is questionSet.topic ', questionSet.topic)
     console.log('This is props.match.params.id ', props.match.params.id)
+    // if (questionSets.id === props.match.params.id) {
     // if (questionSet.id - props.match.params.id === 0) {
     if (parseInt(questionSet.id) === parseInt(props.match.params.id)) {
       return (
@@ -42,15 +42,5 @@ const QuestionSet = props => {
     </div>
   )
 }
-
-// export default QuestionSet
-
-// import React from 'react'
-//
-// const QuestionSet = props => {
-//   return (
-//     <h1>Hello World</h1>
-//   )
-// }
 
 export default QuestionSet
