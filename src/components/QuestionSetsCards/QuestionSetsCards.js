@@ -8,9 +8,6 @@ import QuestionSet from '../QuestionSet/QuestionSet'
 //  challenge view
 const QuestionSetsCards = ({ card, id }) => {
   return (
-    // <div className='row'>
-    //   <div className='col-sm-8'>
-    //     <div>
     <Card key={QuestionSet.id}>
       <Card.Body variant="top">
         <Card.Title><Link to={`/question-sets/${id}`}>{card.topic}</Link></Card.Title>
@@ -18,9 +15,6 @@ const QuestionSetsCards = ({ card, id }) => {
         </Card.Text>
       </Card.Body>
     </Card>
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 export default QuestionSetsCards
