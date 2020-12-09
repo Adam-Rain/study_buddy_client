@@ -10,7 +10,7 @@ const QuestionCards = ({ card, id }) => {
   console.log(card)
   return (
     <Card className={styles.maincontainer} key={QuestionSet.id}>
-      <Card.Body className={styles.thecard} style={{ textAlign: 'center' }} variant="top">
+      <Card.Body className={styles.thecard} variant="top">
         <Card.Title className={styles.thefront}>{card.question}</Card.Title>
         <Card.Text className={styles.theback}>{card.answer}
         </Card.Text>

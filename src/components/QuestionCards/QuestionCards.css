@@ -2,10 +2,16 @@
     position: relative;
     width: 250px;
     height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 :local(.thecard) {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     height: 90%;
     transform-style: preserve-3d;
@@ -24,6 +30,9 @@
     background: #fafafa;
     color: #333;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     background: yellow;
 }
