@@ -54,7 +54,7 @@ class App extends Component {
             <QuestionSets />
           )} />
           <Route exact path='/question-sets/:id' render={({ match, topic }) => (
-            <QuestionSet topic={topic} match={match} />
+            <QuestionSet user={user} topic={topic} match={match} />
           )} />
           <Route exact path='/' render={() => (
             <QuestionSets />

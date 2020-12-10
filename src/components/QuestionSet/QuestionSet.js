@@ -17,29 +17,21 @@ const QuestionSet = props => {
   }, [])
 
   const topic = questionSets.map(questionSet => {
-    console.log('This is questionSet.id ', questionSet.id)
-    console.log('This is questionSet.topic ', questionSet.topic)
-    console.log('This is props.match.params.id ', props.match.params.id)
-    // if (questionSets.id === props.match.params.id) {
-    // if (questionSet.id - props.match.params.id === 0) {
+    console.log('this is questionSet.owner', questionSet.owner)
+    console.log('this is props.user.id', props.user.id)
+    console.log('Do they match', questionSet.owner === props.user.id)
     if (parseInt(questionSet.id) === parseInt(props.match.params.id)) {
       return (
-        // <QuestionCards key={questionSet.id} id={questionSet.id} card={questionSet} />
         <div key={questionSet.id}>
           <h1>{questionSet.topic}</h1>
+          { props.user.id === questionSet.owner ? (<button>Add new questions</button>) : null }
         </div>
       )
     }
   })
-
   const questions = questionSet.map(question => (
     <QuestionCards key={question.id} id={question.id} card={question} />
-    // <div key={question.id}>
-    //   <h2>{question.question}</h2>
-    //   <p>{question.answer}</p>
-    // </div>
   ))
-
   return (
     <div>
       <div style={{ textAlign: 'center' }} className='container'>
