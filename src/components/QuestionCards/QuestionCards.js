@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card'
 // import { Link } from 'react-router-dom'
 import QuestionSet from '../QuestionSet/QuestionSet'
@@ -8,12 +8,19 @@ import styles from './QuestionCards.css'
 //  challenge view
 const QuestionCards = ({ card, id }) => {
   console.log(card)
+
+  const [flipped, setFlipped] = useState(false)
+
+  const handleClick = event => {
+    event.preventDefault()
+    setFlipped(!flipped)
+  }
+
   return (
     <Card className={styles.maincontainer} key={QuestionSet.id}>
       <Card.Body className={styles.thecard} variant="top">
-        <Card.Title className={styles.thefront}>{card.question}</Card.Title>
-        <Card.Text className={styles.theback}>{card.answer}
-        </Card.Text>
+        {flipped ? <Card.Text className={styles.theback}>{card.answer}</Card.Text> : <Card.Title className={styles.thefront}>{card.question}</Card.Title>}
+        <button className={styles.btn} onClick={handleClick}>{flipped ? 'Return To Question' : 'Reveal Answer'}</button>
       </Card.Body>
     </Card>
   )
