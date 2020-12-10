@@ -5,37 +5,24 @@
 }
 
 :local(.thecard) {
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    transform-style: preserve-3d;
-    transition: all 0.5s ease;
-}
-
-:local(.thefront) {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: #fafafa;
-    color: #333;
-    text-align: center;
-    border-radius: 20px;
-    background: yellow;
-}
-
-:local(.theback) {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #fafafa;
-    color: #333;
-    text-align: center;
-    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: blue;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    background: yellow;
+}
+
+:local(.thefront) {
+    color: #333;
+    text-align: center;
+}
+
+:local(.theback) {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 :local(.back-text) {
