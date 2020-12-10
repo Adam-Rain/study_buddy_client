@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { indexQuestions, indexQuestionSets } from '../../api/questions.js'
 import QuestionCards from '../QuestionCards/QuestionCards'
 import CardGroup from 'react-bootstrap/CardGroup'
+import styles from './QuestionSet.css'
 
 const QuestionSet = props => {
   const [questionSet, setQuestionSet] = useState([])
@@ -44,7 +45,7 @@ const QuestionSet = props => {
       <div style={{ textAlign: 'center' }} className='container'>
         {topic}
       </div>
-      <CardGroup>
+      <CardGroup className = {styles.cardgroup}>
         {questions}
       </CardGroup>
     </div>

@@ -25,13 +25,13 @@ class QuestionCards extends Component {
         <Card className={styles.maincontainer} key={QuestionSet.id}>
           <Card.Body className={styles.thecard} variant="top">
             <Card.Title className={styles.thefront}>{card.question}</Card.Title>
-            <button className={styles.btn} onClick={this.handleClick}>Click to flip</button>
+            <button className={styles.btn} onClick={this.handleClick}>Reveal Answer</button>
           </Card.Body>
         </Card>
         <Card className={styles.maincontainer} key={QuestionSet.id}>
           <Card.Body className={styles.thecard} variant="top">
             <Card.Text className={styles.theback}>{card.answer}</Card.Text>
-            <button className={styles.btn} onClick={this.handleClick}>Click to flip</button>
+            <button className={styles.btn} onClick={this.handleClick}>Return to Question</button>
           </Card.Body>
         </Card>
       </ReactCardFlip>
