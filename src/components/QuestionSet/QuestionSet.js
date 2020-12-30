@@ -17,14 +17,11 @@ const QuestionSet = props => {
   }, [])
 
   const topic = questionSets.map(questionSet => {
-    console.log('this is questionSet.owner', questionSet.owner)
-    console.log('this is props.user.id', props.user.id)
-    console.log('Do they match', questionSet.owner === props.user.id)
     if (parseInt(questionSet.id) === parseInt(props.match.params.id)) {
       return (
         <div key={questionSet.id}>
           <h1>{questionSet.topic}</h1>
-          { props.user.id === questionSet.owner ? (<button>Add new questions</button>) : null }
+          {/* { props.user.id === questionSet.owner ? (<div><button>Add new questions</button></div>) : null } */}
         </div>
       )
     }
