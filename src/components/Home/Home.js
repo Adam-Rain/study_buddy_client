@@ -7,12 +7,6 @@ import study5 from './HomeImages/study5.jpg'
 import styles from './Home.css'
 // import Layout from '../shared/Layout/Layout'
 
-// image source isn't recognizing path to image in file
-// commented out below is a previous (incorrect) carousel skeleton that
-// contains live links of the images
-
-// wanted to wrap carousel in bootstrap container and row with a new row underneath to enter content
-
 function HomeCarousel () {
   const [index, setIndex] = useState(0)
 
@@ -22,7 +16,7 @@ function HomeCarousel () {
 
   return (
     <Fragment>
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel className={styles.carousel} activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img
             className="d-block w-100"
