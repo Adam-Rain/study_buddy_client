@@ -9,7 +9,6 @@ export const indexQuestionSets = () => {
 }
 
 export const indexQuestions = (id) => {
-  console.log('this is the id from props ', id)
   return axios({
     url: `${apiUrl}/questions/${id}`,
     method: 'GET'

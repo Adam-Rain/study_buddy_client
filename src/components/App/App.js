@@ -10,6 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import QuestionSet from '../QuestionSet/QuestionSet'
 import QuestionSets from '../QuestionSets/QuestionSets'
+import HomeCarousel from '../Home/Home'
 
 class App extends Component {
   constructor () {
@@ -57,7 +58,7 @@ class App extends Component {
             <QuestionSet user={user} topic={topic} match={match} />
           )} />
           <Route exact path='/' render={() => (
-            <QuestionSets />
+            <HomeCarousel />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />

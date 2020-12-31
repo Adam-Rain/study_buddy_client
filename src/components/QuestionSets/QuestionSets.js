@@ -4,7 +4,6 @@ import { indexQuestionSets } from '../../api/questions.js'
 import QuestionSetTableRow from '../QuestionSetsTableRow/QuestionSetsTableRow'
 
 const QuestionSets = props => {
-  console.log('these are props ', props)
   const [questionSets, setQuestionSets] = useState([])
 
   useEffect(() => {
@@ -12,7 +11,6 @@ const QuestionSets = props => {
       .then(res => setQuestionSets(res.data.question_sets))
       .catch(console.error)
   }, [])
-  console.log('These are questionSets ', questionSets)
   const qSets = questionSets.map(qSet => (
     <QuestionSetTableRow key={qSet.id} id={qSet.id} card={qSet}/>
   ))
