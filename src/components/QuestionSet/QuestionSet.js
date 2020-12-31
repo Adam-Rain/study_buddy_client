@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { indexQuestions, indexQuestionSets } from '../../api/questions.js'
 import QuestionCards from '../QuestionCards/QuestionCards'
 import CardGroup from 'react-bootstrap/CardGroup'
@@ -30,13 +31,16 @@ const QuestionSet = props => {
     <QuestionCards key={question.id} id={question.id} card={question} />
   ))
   return (
-    <div>
+    <div className='container'>
       <div style={{ textAlign: 'center' }} className='container'>
         {topic}
       </div>
       <CardGroup className = {styles.cardgroup}>
         {questions}
       </CardGroup>
+      <div style={{ textAlign: 'center', marginTop: '5rem' }}>
+        <Link to={'/question-sets/'}><button>View All Question Sets</button></Link>
+      </div>
     </div>
   )
 }
