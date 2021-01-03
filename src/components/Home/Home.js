@@ -1,11 +1,10 @@
-import React, { useState, Fragment } from 'react'
-import Footer from '../Footer/Footer.js'
+import React, { useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import study3 from './HomeImages/study3.jpg'
 import study4 from './HomeImages/study4.jpg'
 import study5 from './HomeImages/study5.jpg'
 import styles from './Home.css'
-// import Layout from '../shared/Layout/Layout'
+import Layout from '../Layout/Layout'
 
 function HomeCarousel () {
   const [index, setIndex] = useState(0)
@@ -15,7 +14,7 @@ function HomeCarousel () {
   }
 
   return (
-    <Fragment>
+    <Layout>
       <Carousel className={styles.carousel} activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img
@@ -60,8 +59,7 @@ function HomeCarousel () {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Footer />
-    </Fragment>
+    </Layout>
   )
 }
 

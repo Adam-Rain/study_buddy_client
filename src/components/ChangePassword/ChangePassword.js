@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
-
 import { changePassword } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
-
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Footer from '../Footer/Footer'
 
 const ChangePassword = props => {
   const [newPassword, setNewPassword] = useState('')
@@ -66,6 +65,7 @@ const ChangePassword = props => {
           </Button>
         </Form>
       </div>
+      <Footer/>
     </div>
   )
 }

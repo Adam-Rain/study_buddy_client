@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
-
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
-
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Footer from '../Footer/Footer'
 
 const SignIn = props => {
   const [email, setEmail] = useState('')
@@ -68,6 +67,7 @@ const SignIn = props => {
           </Button>
         </Form>
       </div>
+      <Footer/>
     </div>
   )
 }

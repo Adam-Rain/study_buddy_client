@@ -1,7 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import Footer from '../Footer/Footer'
 import { withRouter } from 'react-router-dom'
 import { indexQuestionSets } from '../../api/questions.js'
 import QuestionSetTableRow from '../QuestionSetsTableRow/QuestionSetsTableRow'
+// import { Footer } from 'react-bootstrap/lib/Modal'
 
 const QuestionSets = props => {
   const [questionSets, setQuestionSets] = useState([])
@@ -31,6 +33,7 @@ const QuestionSets = props => {
           {qSets}
         </tbody>
       </table>
+      <Footer/>
     </Fragment>
   )
 }

@@ -4,6 +4,8 @@ import { indexQuestions, indexQuestionSets } from '../../api/questions.js'
 import QuestionCards from '../QuestionCards/QuestionCards'
 import CardGroup from 'react-bootstrap/CardGroup'
 import styles from './QuestionSet.css'
+// import { Footer } from 'react-bootstrap/lib/Modal'
+import Footer from '../Footer/Footer'
 
 const QuestionSet = props => {
   const [questionSet, setQuestionSet] = useState([])
@@ -41,6 +43,7 @@ const QuestionSet = props => {
       <div style={{ textAlign: 'center', marginTop: '5rem' }}>
         <Link to={'/question-sets/'}><button>View All Question Sets</button></Link>
       </div>
+      <Footer/>
     </div>
   )
 }
