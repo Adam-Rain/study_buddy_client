@@ -3,7 +3,6 @@ import Footer from '../Footer/Footer'
 import { withRouter } from 'react-router-dom'
 import { indexQuestionSets } from '../../api/questions.js'
 import QuestionSetTableRow from '../QuestionSetsTableRow/QuestionSetsTableRow'
-// import { Footer } from 'react-bootstrap/lib/Modal'
 
 const QuestionSets = props => {
   const [questionSets, setQuestionSets] = useState([])
@@ -20,7 +19,7 @@ const QuestionSets = props => {
   return (
     <Fragment>
       <h1 style={{ textAlign: 'center' }}>Click a topic to view the questions</h1>
-      <table className="table table-bordered" style={{ textAlign: 'center' }}>
+      <table className="table table-bordered" style={{ textAlign: 'center', backgroundColor: 'white' }}>
         <thead>
           <tr>
             <th scope="col">#</th>

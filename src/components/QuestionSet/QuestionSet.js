@@ -4,7 +4,6 @@ import { indexQuestions, indexQuestionSets } from '../../api/questions.js'
 import QuestionCards from '../QuestionCards/QuestionCards'
 import CardGroup from 'react-bootstrap/CardGroup'
 import styles from './QuestionSet.css'
-// import { Footer } from 'react-bootstrap/lib/Modal'
 import Footer from '../Footer/Footer'
 
 const QuestionSet = props => {

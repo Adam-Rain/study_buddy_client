@@ -23,7 +23,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar style={{ backgroundColor: '#004E7C' }} variant="dark" expand="md">
     <Navbar.Brand href="#">
       Study Buddy
     </Navbar.Brand>

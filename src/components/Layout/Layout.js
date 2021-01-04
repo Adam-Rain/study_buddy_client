@@ -1,13 +1,13 @@
 //  This file is the 'wrapper' for all of the content rendered on the page
-import React from 'react'
+import React, { Fragment } from 'react'
 import Footer from '../Footer/Footer'
 
 const Layout = props => (
-  <div>
+  <Fragment>
     <h1>Study Buddy</h1>
     {props.children}
     <Footer />
-  </div>
+  </Fragment>
 )
 
 export default Layout

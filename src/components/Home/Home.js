@@ -25,8 +25,8 @@ function HomeCarousel () {
           />
           <Carousel.Caption>
             <div className={styles.carouselTextDiv}>
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-              <p>Donec cursus magna id lorem pharetra dignissim. Aenean iaculis luctus facilisis. Donec sollicitudin augue non ante lobortis, eget dictum leo tempor.</p>
+              <h3>Preparing for an interview or exam?</h3>
+              <p>Use the flashcards from these question sets to review material sourced from common technical interview questions.</p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -39,8 +39,8 @@ function HomeCarousel () {
 
           <Carousel.Caption>
             <div className={styles.carouselTextDiv}>
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-              <p>Donec cursus magna id lorem pharetra dignissim. Aenean iaculis luctus facilisis. Donec sollicitudin augue non ante lobortis, eget dictum leo tempor.</p>
+              <h3>Want to add a new topic?</h3>
+              <p>The ability to add your own questions from this page will be coming soon! If you&apos;d like to have us add something now, please reach out to us! We are happy to collaborate and add new material to help others reach their goals!</p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -53,8 +53,8 @@ function HomeCarousel () {
           />
           <Carousel.Caption>
             <div className={styles.carouselTextDiv}>
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-              <p>Donec cursus magna id lorem pharetra dignissim. Aenean iaculis luctus facilisis. Donec sollicitudin augue non ante lobortis, eget dictum leo tempor.</p>
+              <h3>Corrections or Further Clarifications? </h3>
+              <p>Please reach out to us if you&apos;d like to edit a question or an answer - we are all on different stages of our learning journey and we move faster and farther when we go together!</p>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
