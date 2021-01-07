@@ -7,13 +7,19 @@ import QuestionSetTableRow from '../QuestionSetsTableRow/QuestionSetsTableRow'
 const QuestionSets = props => {
   const [questionSets, setQuestionSets] = useState([])
 
-  useEffect(() => {
+  useEffect((newValue, index) => {
     indexQuestionSets()
       .then(res => setQuestionSets(res.data.question_sets))
+      // .then(res => setQuestionSets(prevState => {
+      //   const aux = Array.from(prevState)
+      //   aux[index] = newValue
+      //   console.log(aux)
+      //   return aux
+      // }))
       .catch(console.error)
   }, [])
-  const qSets = questionSets.map(qSet => (
-    <QuestionSetTableRow key={qSet.id} id={qSet.id} card={qSet}/>
+  const qSets = questionSets.map((qSet, index) => (
+    <QuestionSetTableRow index={index} key={qSet.id} id={qSet.id} card={qSet}/>
   ))
 
   return (
@@ -25,7 +31,7 @@ const QuestionSets = props => {
             <th scope="col">#</th>
             <th scope="col">Topic</th>
             <th scope="col">Number of Questions</th>
-            <th scope="col">Created By</th>
+            {/* <th scope="col">Created By</th> */}
           </tr>
         </thead>
         <tbody>
