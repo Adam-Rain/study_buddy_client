@@ -12,6 +12,7 @@ import QuestionSet from '../QuestionSet/QuestionSet'
 import QuestionSets from '../QuestionSets/QuestionSets'
 import HomeCarousel from '../Home/Home'
 import CreateQuestionSet from '../CreateQuestionSet/CreateQuestionSet'
+import CreateNewQuestion from '../CreateNewQuestion/CreateNewQuestion'
 
 class App extends Component {
   constructor () {
@@ -69,6 +70,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/create-question-set' render={() => (
             <CreateQuestionSet user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/question-sets/:id/add' render={() => (
+            <CreateNewQuestion user={user} />
           )} />
         </main>
       </Fragment>
