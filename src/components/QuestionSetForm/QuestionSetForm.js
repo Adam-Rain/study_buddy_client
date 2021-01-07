@@ -12,7 +12,9 @@ const QuestionSetForm = ({ topic, handleSubmit, handleChange, cancelPath }) => (
       name="topic"
       onChange={handleChange}
     />
-    <Button type="submit">Submit</Button>
+    <Link to='/question-sets'>
+      <Button type="submit">Submit</Button>
+    </Link>
     <Link to={cancelPath}>
       <Button>Cancel</Button>
     </Link>

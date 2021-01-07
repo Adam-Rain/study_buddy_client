@@ -32,7 +32,6 @@ const CreateQuestionSet = props => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      .then(console.log('after axios'))
   }
 
   return (

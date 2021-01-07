@@ -10,12 +10,6 @@ const QuestionSets = props => {
   useEffect((newValue, index) => {
     indexQuestionSets()
       .then(res => setQuestionSets(res.data.question_sets))
-      // .then(res => setQuestionSets(prevState => {
-      //   const aux = Array.from(prevState)
-      //   aux[index] = newValue
-      //   console.log(aux)
-      //   return aux
-      // }))
       .catch(console.error)
   }, [])
   const qSets = questionSets.map((qSet, index) => (
