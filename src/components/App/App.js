@@ -71,8 +71,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/create-question-set' render={() => (
             <CreateQuestionSet user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/question-sets/:id/add' render={() => (
-            <CreateNewQuestion user={user} />
+          <AuthenticatedRoute user={user} exact path='/question-sets/:id/add' render={({ match }) => (
+            <CreateNewQuestion user={user} match={match} />
           )} />
         </main>
       </Fragment>

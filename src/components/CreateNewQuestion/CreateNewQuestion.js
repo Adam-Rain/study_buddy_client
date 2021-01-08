@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+import apiUrl from '../../apiConfig'
 import QuestionForm from '../QuestionForm/QuestionForm'
 
 const CreateNewQuestion = props => {
@@ -15,10 +17,29 @@ const CreateNewQuestion = props => {
     console.log('answer', answer)
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    return axios({
+      url: `${apiUrl}/question_sets/${props.match.params.id}`,
+      method: 'POST',
+      data: {
+        question_set: {
+          questions: {
+            question: question,
+            answer: answer
+          }
+        }
+      },
+      headers: {
+        'Authorization': `Token ${props.user.token}`
+      }
+    })
+  }
+
   return (
     <div>
       <h1>CreateNewQuestion</h1>
-      <QuestionForm handleQuestionChange={handleQuestionChange} handleAnswerChange={handleAnswerChange} />
+      <QuestionForm question={question} answer={answer} handleQuestionChange={handleQuestionChange} handleAnswerChange={handleAnswerChange} handleSubmit={handleSubmit} />
     </div>
 
   )

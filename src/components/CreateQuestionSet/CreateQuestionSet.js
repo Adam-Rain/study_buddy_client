@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import QuestionSetForm from '../QuestionSetForm/QuestionSetForm'
@@ -18,7 +19,7 @@ const CreateQuestionSet = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log('Before axios')
+    const { history } = props
     return axios({
       url: `${apiUrl}/question_sets/`,
       method: 'POST',
@@ -32,6 +33,7 @@ const CreateQuestionSet = props => {
         'Authorization': `Token ${props.user.token}`
       }
     })
+      .then(() => history.push('/question-sets'))
   }
 
   return (
@@ -39,4 +41,4 @@ const CreateQuestionSet = props => {
   )
 }
 
-export default CreateQuestionSet
+export default withRouter(CreateQuestionSet)
