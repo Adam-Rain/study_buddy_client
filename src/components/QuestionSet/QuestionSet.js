@@ -23,7 +23,7 @@ const QuestionSet = props => {
       return (
         <div key={questionSet.id}>
           <h1>{questionSet.topic}</h1>
-          { props.user.id === questionSet.owner ? (<Link to={`/question-set/${questionSet.id}/add`}><button>Add new questions</button></Link>) : null }
+          { props.user.id === questionSet.owner ? (<Link to={`/question-sets/${questionSet.id}/add`}><button>Add new questions</button></Link>) : null }
         </div>
       )
     }
