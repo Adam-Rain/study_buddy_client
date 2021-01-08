@@ -19,6 +19,7 @@ const CreateQuestionSet = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    console.log(props)
     const { history } = props
     return axios({
       url: `${apiUrl}/question_sets/`,

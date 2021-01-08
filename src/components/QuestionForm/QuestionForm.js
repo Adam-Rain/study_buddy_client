@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const QuestionForm = ({ handleQuestionChange, handleAnswerChange, handleSubmit, question, answer }) => {
+const QuestionForm = ({ handleQuestionChange, handleAnswerChange, handleSubmit, question, answer, id }) => {
+  console.log(id)
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Label>Question</Form.Label>

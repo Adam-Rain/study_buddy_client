@@ -7,6 +7,8 @@ const CreateNewQuestion = props => {
   const [question, setQuestion] = useState('')
   const [answer, setAnswer] = useState('')
 
+  console.log(props)
+
   const handleQuestionChange = event => {
     setQuestion(event.target.value)
     console.log('question', question)
@@ -20,14 +22,13 @@ const CreateNewQuestion = props => {
   const handleSubmit = (event) => {
     event.preventDefault()
     return axios({
-      url: `${apiUrl}/question_sets/${props.match.params.id}`,
+      url: `${apiUrl}/questions/${props.match.params.id}`,
       method: 'POST',
       data: {
-        question_set: {
-          questions: {
-            question: question,
-            answer: answer
-          }
+        question: {
+          question: question,
+          answer: answer,
+          question_set: props.match.params.id
         }
       },
       headers: {
@@ -38,8 +39,8 @@ const CreateNewQuestion = props => {
 
   return (
     <div>
-      <h1>CreateNewQuestion</h1>
-      <QuestionForm question={question} answer={answer} handleQuestionChange={handleQuestionChange} handleAnswerChange={handleAnswerChange} handleSubmit={handleSubmit} />
+      <h1>Create New Question</h1>
+      <QuestionForm id={props.match.params.id} question={question} answer={answer} handleQuestionChange={handleQuestionChange} handleAnswerChange={handleAnswerChange} handleSubmit={handleSubmit} />
     </div>
 
   )
