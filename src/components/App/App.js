@@ -54,7 +54,7 @@ class App extends Component {
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
           <Route exact path='/question-sets' render={() => (
-            <QuestionSets />
+            <QuestionSets user={user} />
           )} />
           <Route exact path='/question-sets/:id' render={({ match, topic }) => (
             <QuestionSet user={user} topic={topic} match={match} />

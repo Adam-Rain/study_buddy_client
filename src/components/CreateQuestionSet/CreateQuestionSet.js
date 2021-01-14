@@ -10,9 +10,9 @@ const CreateQuestionSet = props => {
 
   const handleChange = event => {
     setTopic(event.target.value)
-    setOwner(props.user.id)
+    setOwner(props.user.email)
     console.log(event.target.value)
-    console.log('This is the user', props.user)
+    console.log('This is the user.email', props.user.email)
     console.log('topic', topic)
     console.log('owner', owner)
   }
@@ -38,7 +38,7 @@ const CreateQuestionSet = props => {
   }
 
   return (
-    <QuestionSetForm topic={topic} handleChange={handleChange} handleSubmit={handleSubmit} cancelPath="/" />
+    <QuestionSetForm topic={topic} handleChange={handleChange} handleSubmit={handleSubmit} cancelPath="/" owner={owner} />
   )
 }
 

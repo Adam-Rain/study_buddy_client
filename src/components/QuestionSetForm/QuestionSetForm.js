@@ -11,7 +11,6 @@ const QuestionSetForm = ({ topic, handleSubmit, handleChange, cancelPath }) => (
       value={topic}
       name="topic"
       onChange={handleChange}
-      // id={questionSet.id}
     />
     <Button type="submit">Submit</Button>
     <Link to={cancelPath}>

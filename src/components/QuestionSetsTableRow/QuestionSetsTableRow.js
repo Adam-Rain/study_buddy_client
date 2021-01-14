@@ -1,9 +1,9 @@
 //  This shows the list of all question sets
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 const QuestionSetTableRow = ({ card, id, index }) => {
-  console.log('this is index', index)
+  console.log('this is card', card)
   return (
     <tr>
       <th scope="row">{index + 1}</th>
@@ -14,4 +14,4 @@ const QuestionSetTableRow = ({ card, id, index }) => {
   )
 }
 
-export default QuestionSetTableRow
+export default withRouter(QuestionSetTableRow)

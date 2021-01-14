@@ -6,8 +6,7 @@ import QuestionSetTableRow from '../QuestionSetsTableRow/QuestionSetsTableRow'
 
 const QuestionSets = props => {
   const [questionSets, setQuestionSets] = useState([])
-
-  useEffect((newValue, index) => {
+  useEffect(() => {
     indexQuestionSets()
       .then(res => setQuestionSets(res.data.question_sets))
       .catch(console.error)
