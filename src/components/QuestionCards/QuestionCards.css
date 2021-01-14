@@ -1,0 +1,40 @@
+:local(.maincontainer) {
+    position: relative;
+    width: 250px;
+    height: 320px;
+}
+
+:local(.thecard) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    background: #b9bcbd;
+}
+
+:local(.thefront) {
+    color: #333;
+    text-align: center;
+}
+
+:local(.theback) {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:local(.back-text) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:local(.btn) {
+  position: absolute;
+  display: flex;
+  bottom: 10px;
+  margin-top: auto;
+  backface-visibility: hidden;
+}

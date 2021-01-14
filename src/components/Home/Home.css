@@ -1,0 +1,11 @@
+:local(.carousel) {
+    margin-top: 3rem;
+}
+
+:local(.carouselTextDiv) {
+    background: rgb(60,60,60);
+    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4));
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    }

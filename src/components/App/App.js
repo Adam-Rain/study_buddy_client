@@ -10,6 +10,9 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import QuestionSet from '../QuestionSet/QuestionSet'
 import QuestionSets from '../QuestionSets/QuestionSets'
+import HomeCarousel from '../Home/Home'
+import CreateQuestionSet from '../CreateQuestionSet/CreateQuestionSet'
+import CreateNewQuestion from '../CreateNewQuestion/CreateNewQuestion'
 
 class App extends Component {
   constructor () {
@@ -51,19 +54,25 @@ class App extends Component {
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
           <Route exact path='/question-sets' render={() => (
-            <QuestionSets />
+            <QuestionSets user={user} />
           )} />
           <Route exact path='/question-sets/:id' render={({ match, topic }) => (
-            <QuestionSet topic={topic} match={match} />
+            <QuestionSet user={user} topic={topic} match={match} />
           )} />
           <Route exact path='/' render={() => (
-            <QuestionSets />
+            <HomeCarousel />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+          <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/create-question-set' render={() => (
+            <CreateQuestionSet user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/question-sets/:id/add' render={({ match }) => (
+            <CreateNewQuestion user={user} match={match}/>
           )} />
         </main>
       </Fragment>

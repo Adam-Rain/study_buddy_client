@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { indexQuestions, indexQuestionSets } from '../../api/questions.js'
 import QuestionCards from '../QuestionCards/QuestionCards'
 import CardGroup from 'react-bootstrap/CardGroup'
+import styles from './QuestionSet.css'
+import Footer from '../Footer/Footer'
 
 const QuestionSet = props => {
   const [questionSet, setQuestionSet] = useState([])
@@ -16,37 +19,30 @@ const QuestionSet = props => {
   }, [])
 
   const topic = questionSets.map(questionSet => {
-    console.log('This is questionSet.id ', questionSet.id)
-    console.log('This is questionSet.topic ', questionSet.topic)
-    console.log('This is props.match.params.id ', props.match.params.id)
-    // if (questionSets.id === props.match.params.id) {
-    // if (questionSet.id - props.match.params.id === 0) {
     if (parseInt(questionSet.id) === parseInt(props.match.params.id)) {
       return (
-        // <QuestionCards key={questionSet.id} id={questionSet.id} card={questionSet} />
         <div key={questionSet.id}>
           <h1>{questionSet.topic}</h1>
+          { props.user.id === questionSet.owner ? (<Link to={`/question-sets/${questionSet.id}/add`}><button>Add new questions</button></Link>) : null }
         </div>
       )
     }
   })
-
   const questions = questionSet.map(question => (
     <QuestionCards key={question.id} id={question.id} card={question} />
-    // <div key={question.id}>
-    //   <h2>{question.question}</h2>
-    //   <p>{question.answer}</p>
-    // </div>
   ))
-
   return (
-    <div>
+    <div className='container'>
       <div style={{ textAlign: 'center' }} className='container'>
         {topic}
       </div>
-      <CardGroup>
+      <CardGroup className = {styles.cardgroup}>
         {questions}
       </CardGroup>
+      <div style={{ textAlign: 'center', marginTop: '5rem' }}>
+        <Link to={'/question-sets/'}><button>View All Question Sets</button></Link>
+      </div>
+      <Footer/>
     </div>
   )
 }

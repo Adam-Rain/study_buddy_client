@@ -6,6 +6,7 @@ const authenticatedOptions = (
   <Fragment>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
+    <Nav.Link href="#create-question-set">Create a Question Set</Nav.Link>
   </Fragment>
 )
 
@@ -23,9 +24,9 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar style={{ backgroundColor: '#004E7C' }} variant="dark" expand="md">
     <Navbar.Brand href="#">
-      study_buddy_client
+      Study Buddy
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
